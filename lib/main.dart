@@ -17,9 +17,12 @@ class NavigationApp extends StatelessWidget {
       // Map the following routes to their respective widgets:
       // '/' -> Home()
       // '/second' -> SecondPage()
+
       // '/third' -> ThirdPage()
       routes: {
-          '/': (context) => Home(),
+        '/': (context) => Home(),
+        '/second': (context) => SecondPage(),
+        '/third': (context) => ThirdPage(),
       },
     );
   }
@@ -31,9 +34,7 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Home"),
-      ),
+      appBar: AppBar(title: const Text("Home")),
       body: SafeArea(
         child: Center(
           child: Column(
@@ -45,9 +46,10 @@ class Home extends StatelessWidget {
                 icon: const Icon(Icons.navigate_next),
                 onPressed: () {
                   // TODO 2: Use Navigator to push the '/second' route
-                  
+                  Navigator.pushNamed(context, '/second');
+                  Navigator.pushNamed(context, '/third');
                 },
-              )
+              ),
             ],
           ),
         ),

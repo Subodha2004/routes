@@ -6,9 +6,7 @@ class SecondPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Second Page"),
-      ),
+      appBar: AppBar(title: const Text("Second Page")),
       body: SafeArea(
         child: Center(
           child: Column(
@@ -19,7 +17,7 @@ class SecondPage extends StatelessWidget {
               ElevatedButton(
                 onPressed: () {
                   // TODO 3: Use Navigator to push the '/third' route
-                  
+                  Navigator.pushNamed(context, '/third');
                 },
                 child: const Text("Go to Third Page"),
               ),
@@ -27,10 +25,10 @@ class SecondPage extends StatelessWidget {
               TextButton(
                 onPressed: () {
                   // TODO 4: Use Navigator to pop this screen and return to Home
-                  
+                  Navigator.pop(context);
                 },
                 child: const Text("Go Back"),
-              )
+              ),
             ],
           ),
         ),
